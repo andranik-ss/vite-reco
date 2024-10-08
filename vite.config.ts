@@ -10,4 +10,12 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://17f4-2a02-908-2540-80e0-6807-36b1-211b-4c31.ngrok-free.app',
+        changeOrigin: true,
+      },
+    },
+  },
 })
